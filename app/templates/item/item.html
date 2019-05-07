@@ -1,0 +1,44 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %} 
+{% if add_item %}
+        Adicionar-Item
+    {% else %}
+        Atualizar-Item
+{% endif %}
+{% endblock %}
+{% block body %}
+<div class="content-section" id="gradient">
+ <div class="outer">
+    <div class="middle">
+      <div class="inner" >
+        <div class="center" >
+            {% if add_item %}
+                <h1 style="text-align:center;">Cadastrar Item</h1>
+                <br/>
+                 {{ wtf.quick_form(form) }}
+                <br/>
+                 <a href="{{ request.referrer }}" class="btn btn-default btn-sm">
+                 <i class="fa fa-backward "></i> Voltar </a><br/>
+            {% elif editar_item_entrada %}
+                  <h1 style="text-align:center;">----Atualizar Informações do Item</h1>
+                  <br/>
+                  {{ wtf.quick_form(form) }}
+                  <br/>
+                  <a href="{{ request.referrer }}" class="btn btn-default btn-sm">
+                  <i class="fa fa-backward "></i> Voltar </a><br/>
+              <!-- request.referrer - guarda a tela de onde ele vem, servindo paar voltar  -->
+              {% else %}
+                  <h1 style="text-align:center;">Atualizar Informações do Item</h1>
+                  <br/>
+                  {{ wtf.quick_form(form) }}
+                  <br/>
+                  <a href="{{ request.referrer }}" class="btn btn-default btn-sm">
+                  <i class="fa fa-backward "></i> Voltar </a><br/>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

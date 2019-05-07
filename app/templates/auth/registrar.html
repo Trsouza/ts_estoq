@@ -1,0 +1,28 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}Registrar{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="center">
+
+    <h1>Crie uma nova conta </h1>
+    <br/>
+
+    <!-- <div class ="form-group">
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tipo de Usuário(s)</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected>Selecione</option>
+        <option value="Professor">Professor</option>
+        <option value="Aluno">Aluno</option>
+      </select>
+    </div> -->
+      {{ wtf.quick_form(form) }}
+      <!-- <div class="center">
+      <a href="{{ request.referrer }}" class="btn btn-default btn-sm">
+        <i class="fa fa-backward "></i> voltar </a>&nbsp;&nbsp;&nbsp;
+
+        <button type="submit" class="btn btn-default btn-sm">Cadastrar</button>
+      </div> -->
+
+      </div>
+      {% endblock %}
